@@ -21,4 +21,10 @@ public class HelloController {
         return "hello";
     }
     
+    @GetMapping("/introduce/{name}/{age}")
+    public String introduce(@PathVariable("name") String name, @PathVariable("age") String age, Model model) {
+        model.addAttribute("msg", "私は" + age + "歳の" + name + "です");
+        return "hello";
+    }
+    
 }
